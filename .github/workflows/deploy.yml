@@ -37,10 +37,10 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload contents of the "Pages" folder to the root
-          path: '.'
+          path: './EmbraceAI'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
         with:
           # Deploy contents of the "Pages" folder to the root of GitHub Pages
-          publish_dir: 'Pages'
+          publish_dir: './EmbraceAI/Pages'
