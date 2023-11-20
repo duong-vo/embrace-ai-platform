@@ -84,7 +84,7 @@
 
 #mainCont {
   border-radius: 15px !important;
-  background-image: linear-gradient(rgb(170, 170, 170), #f8f9f9, rgb(170, 170, 170));
+  background-image: linear-gradient(rgb(224, 224, 224), #f8f9f9, rgb(236, 236, 236));
   max-width: 85%;
   padding: 5px 3% 5px 3%;
 }
@@ -129,4 +129,17 @@ h6 {
 .cropped img {
   max-width: 100%;
   margin: -13% 0% -17% 0%;
+}
+.para {
+  text-align: left;
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.croppedNoSize {
+  overflow: hidden;
+  border: 0px solid black;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
