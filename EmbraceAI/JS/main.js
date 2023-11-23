@@ -7,4 +7,10 @@ $(document).ready(function() {
     }, function() {
       $(this).removeClass('shadow-lg');
     });
+    // Add a shadow effect to Bootstrap cards on hover
+    $('.iconHover').hover(function() {
+      $(this).addClass('iconOn');
+    }, function() {
+      $(this).removeClass('iconOn');
+    });
   });
