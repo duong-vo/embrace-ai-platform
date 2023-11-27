@@ -13,4 +13,11 @@ $(document).ready(function() {
     }, function() {
       $(this).removeClass('iconOn');
     });
+
+    $('.linkHover').hover(function() {
+      $(this).addClass('linkOn');
+    }, function() {
+      $(this).removeClass
+      $(this).removeClass('linkOn');
+      });
   });
