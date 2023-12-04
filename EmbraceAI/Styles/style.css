@@ -175,3 +175,7 @@ h6 {
 .linkOn {
   color: rgb(213, 43, 30);
 }
+.under-para {
+  text-align: left;
+  padding-top: 2%;
+}
