@@ -22,21 +22,21 @@
         }).then(function (data) {
           const { data: lines } = Papa.parse(data);
           lines.slice(1).map(line => {
-            const [_, img, bio, resp, linkedin] = line;
-            renderBio(img, bio, resp, linkedin);
+            const [_, _, bio, resp, linkedin, name, img] = line;
+            renderBio(img, bio, resp, linkedin, name);
           });
         }).catch(function (data) {
           console.log('failed', data);
         });
       }
 
-      function renderBio(headshot, bio, resp, linkedin) {
+      function renderBio(headshot, bio, resp, linkedin, name) {
         $(".bios").append(
           `
             <div class="card" style="width: 22rem;">
               <img src="${headshot}" class="card-img-top" alt="bio">
               <div class="card-body">
-                <h5 class="card-title">Drew Laikin</h5>
+                <h5 class="card-title">${name}</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <div class="accordion accordion-flush" id="accordionExample">
                   <div class="accordion-item">
