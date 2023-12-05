@@ -183,3 +183,7 @@ h6 {
   color: transparent;
   border-color: transparent;
 }
+.under-para {
+  text-align: left;
+  padding-top: 2%;
+}
