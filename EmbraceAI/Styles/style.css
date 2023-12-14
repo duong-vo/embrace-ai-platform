@@ -220,3 +220,13 @@ h6 {
   /* I don't actually think this works, but it was worth a shot anyway */
   font-weight: bold;
 }
+
+.pageHeader {
+  font-size: 60px;
+  color: black;
+  text-shadow: 0px 1px rgb(213, 43, 30);
+}
+
+.indexImg {
+  filter: sepia(100%) saturate(350%) brightness(50%) hue-rotate(305deg);
+}
