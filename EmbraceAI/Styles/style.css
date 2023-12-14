@@ -210,8 +210,13 @@ h6 {
 }
 #secondCont {
   border-radius: 15px !important;
-  background-image: linear-gradient(rgb(236, 236, 236), #f8f9f9, rgb(224, 224, 224));
+  background-image: linear-gradient(rgb(188, 188, 188), rgb(230, 230, 230), rgb(188, 188, 188));
   max-width: 85%;
   padding: 5px 3% 5px 3%;
   padding-top: 3%;
+}
+
+#confCountdown{
+  /* I don't actually think this works, but it was worth a shot anyway */
+  font-weight: bold;
 }
