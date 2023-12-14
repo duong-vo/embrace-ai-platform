@@ -79,10 +79,21 @@
   /*background-color: rgb(145, 145, 145) !important;*/
   font-weight: bold;
   color: white;
+  padding-left: 10px;
+  padding-right: 30px;
 }
 
 #navHeader a {
   color: white;
+  font-weight: bold;
+  font-size: 120%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.dropdown-menu{
+  background-image: linear-gradient(rgb(96, 96, 96), rgb(145, 145, 145));
+  font-weight: bold;
 }
 
 #mainCont {
