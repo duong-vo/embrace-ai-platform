@@ -151,6 +151,7 @@ h6 {
   max-width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+  font-size: 30px;
 }
 .croppedNoSize {
   overflow: hidden;
@@ -202,7 +203,7 @@ h6 {
 .under-para {
   text-align: left;
   padding-top: 2%;
-  font-size: 20%;
+  font-size: 40px;
 }
 .bio-img {
   width: 100%;
