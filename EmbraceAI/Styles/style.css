@@ -239,3 +239,11 @@ h6 {
 .h6space {
   display: inline;
 }
+.rightScroll {
+  overflow-y: scroll;
+  position: relative;
+}
+.leftScroll {
+  overflow: hidden;
+  position: fixed;
+}
