@@ -236,3 +236,6 @@ h6 {
 .indexImg {
   filter: sepia(100%) saturate(350%) brightness(50%) hue-rotate(305deg);
 }
+.h6space {
+  display: inline;
+}
