@@ -21,12 +21,9 @@
           type: 'text',
         }).then(function (data) {
           const { data: lines } = Papa.parse(data);
-          console.log(data);
           lines.slice(1).map((line, idx) => {
-            console.log(line);
             const [_, _1, bio, resp, linkedin, name, img, major] = line;
             renderBio(idx, bio, resp, linkedin, name, img, major);
-            console.log(img);
           });
         }).catch(function (data) {
           console.log('failed', data);
