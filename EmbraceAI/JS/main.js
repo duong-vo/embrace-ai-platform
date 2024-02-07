@@ -67,7 +67,8 @@ function renderResources(itemNum, title, source, description, link) {
   if (itemNum === undefined || itemNum === "") return;
   $(".resourcesHere").append(
     `
-      <div class="card" id="${itemNum}">
+      <br>
+      <div class="card rcard" id="${itemNum}">
         <div class="card-body">
           <h5 class="card-title">${title}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">${source}</h6>
@@ -75,6 +76,7 @@ function renderResources(itemNum, title, source, description, link) {
           <a href="${link}" class="card-link">Go to Resource</a>
         </div>
       </div>
+      <br>
     `
   );
 }

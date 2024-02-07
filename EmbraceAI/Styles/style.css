@@ -246,6 +246,11 @@ h6 {
   overflow: hidden
 }
 .leftScroll {
-  overflow: hidden;
   position: fixed;
+}
+.nav-link .active {
+  color: rgb(213, 43, 30);
+}
+.sideNav {
+  background-image: linear-gradient(rgb(96, 96, 96), rgb(145, 145, 145));
 }
