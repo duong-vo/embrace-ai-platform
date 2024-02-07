@@ -52,33 +52,37 @@ function initCountdown() {
 
 function fetchCSV() {
   $.ajax({
-    url: 'https://embraceai.co/assets/resources.csv',
+    url: 'https://embraceai.co/assets/resources.drew',
     method: 'GET',
     type: 'text',
   }).then(function (data) {
-    const { data: lines } = Papa.parse(data);
-    lines.slice(1).map((line, idx) => {
-      const [_, _1, title, source, description, link] = line;
-      renderResources(idx, title, source, description, link);
-    });
+    console.log(data);
+    laikinParse(data);
   }).catch(function (data) {
     console.log('failed', data);
   });
 }
 
-function renderResources(title, source, description, link) {
-  $(".bios").append(
+function renderResources(itemNum, title, source, description, link) {
+  if (itemNum === undefined || itemNum === "") return;
+  $(".resourcesHere").append(
     `
-      <div id="item-1">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">${source}</h6>
-            <p class="card-text">${description}</p>
-            <a href="${link}" class="card-link">Go to Resource</a>
-          </div>
+      <div class="card" id="${itemNum}">
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">${source}</h6>
+          <p class="card-text">${description}</p>
+          <a href="${link}" class="card-link">Go to Resource</a>
         </div>
       </div>
     `
   );
 }
+function laikinParse(str) {
+  let rtn = {};
+  str = str.split("\n").slice(1);
+  str.forEach((element) => {
+    renderResources(...element.split("[:)]"));
+  });
+}
+fetchCSV()

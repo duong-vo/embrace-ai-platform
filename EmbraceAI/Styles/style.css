@@ -242,6 +242,8 @@ h6 {
 .rightScroll {
   overflow-y: scroll;
   position: relative;
+  max-height: fit-content;
+  overflow: hidden
 }
 .leftScroll {
   overflow: hidden;
