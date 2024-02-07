@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="Styles\style.css">
+    <link rel="stylesheet" href="Styles/style.css">
     <title>Embrace AI</title>
     <link rel="icon" type="image/x-icon" href="imgs/logoMicro.png">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
       $(document).ready(() => {
@@ -79,38 +80,42 @@
   <body class="gradGray">
     <nav class="navbar navbar-expand-lg" id="navHeader">
       <div class="navbar-header">
-        <a href="#">
-          <img class="navLogo" alt="logo" src="imgs\logoMini.png">
-        </a>
+          <a href="#">
+            <img class="navLogo" alt="logo" src="imgs\logoMini.png">
+          </a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto" style="margin-left: auto; margin-right: auto;">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
+      <!---->
+      <ul class="nav nav-tabs">
+          <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cohort.html">Meet Cohort XI</a>
+              <a class="nav-link active" id="activeTab" href="cohort.html">Meet Cohort XI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="conference.html">Conference</a>
+              <a class="nav-link" href="conference.html">Conference</a>
           </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Student Videos (COMING SOON)</a>
-                <a class="dropdown-item" href="#">Professional Videos (COMING SOON)</a>
-                <a class="dropdown-item" href="#">Resources (COMING SOON)</a>
+          <li class="nav-item">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Student Videos (COMING SOON)</a>
+                          <a class="dropdown-item" href="#">Professional Videos (COMING SOON)</a>
+                          <a class="dropdown-item" href="#">Resources (COMING SOON)</a>
+                      </div>
+                    </li>
+                </ul>
               </div>
-            </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
+      <!---->
     </nav>
 
 
@@ -133,7 +138,7 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-lg-12" style="text-align: center;">
+          <div class="col-lg-12" style="text-align: center; font-size: 17px;">
             <p>
               Cohort 11 of the Lilly Leadership Institute is an inspired group of individuals all enrolled in
               computing, engineering, and other tech related majors at Miami University in Oxford, Ohio. Below are all
@@ -142,12 +147,6 @@
             </p>
           </div>
         </div>
-        <script src="../JS/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
         <br>
         <hr>
         <div class="container mt-5">
@@ -192,7 +191,7 @@
               </a>
               <a class="icon-link icon-link-hover linkHover" href="cohort.html">
                 Cohort 11
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right linkHover" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
                   <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                 </svg>
@@ -206,5 +205,11 @@
           </div>
         </div>
       </div>
+      <script src="JS/main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+              crossorigin="anonymous"></script>
   </body>
 </html>

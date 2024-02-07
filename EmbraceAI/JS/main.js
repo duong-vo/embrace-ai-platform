@@ -1,27 +1,51 @@
-const HaddadBio = "Charlie leads the Enterprise Business Architecture for Lilly global Tech team. His role is to help our Tech organization deliver digital solutions faster and with higher value that drive Lilly's company growth and success. He leads a talented team of innovators and architects who create and shape solutions for our strategic business priorities, such as improving customer experience, accelerating research and development, enhancing data analytics, and increasing operational efficiency. He also partners closely with our Digital Core teams to ensure that our enterprise foundation tech stack is modern, effective, and scalable. During his more than 30 years at Lilly, Charlie has been a software leader focused on delivering digital innovations in pharmaceutical drug development across many therapeutic areas. Most recently, he was responsible for enabling excellent patient experiences through clinically relevant, digital health software and devices. Prior to that, the majority of roles were in Medicines Development IT where he led the harmonization, integration and automation of clinical information management and data flow. He also had senior leadership roles in our global infrastructure organization enabling digital platform solutions and employee enablement across our enterprise. Charlie earned his bachelor's degree in Computer Systems Analysis from Miami University. He lives in Indianapolis with his wife and they have three grown children spread across the country.";
+// JS for all pages
 
+// DOCUMENT READY
 $(document).ready(function() {
-  // Requiring fs module in which 
-  // readFile function is defined.
+  hoverEffects();
+  hoverShadow();
+  initCountdown();
+});
 
-  // Add a shadow effect to Bootstrap cards on hover
+// Functions
+function hoverShadow() {
   $('.hoverOn').hover(function() {
     $(this).addClass('shadow-lg');
   }, function() {
     $(this).removeClass('shadow-lg');
   });
+}
 
-  // Add a shadow effect to icons on hover
+function hoverEffects() {
   $('.iconHover').hover(function() {
     $(this).addClass('iconOn');
   }, function() {
     $(this).removeClass('iconOn');
   });
-
-  // Add a color change to links on hover
   $('.linkHover').hover(function() {
     $(this).addClass('linkOn');
   }, function() {
     $(this).removeClass('linkOn');
   });
-});
+}
+function initCountdown() {
+  const targetDate = new Date("2024-04-12");
+  const currentDate = new Date();
+  var timeDifference = targetDate.getTime() - currentDate.getTime();
+  // Update the countdown every second
+  setInterval(() => {
+    // Recalculate the time difference
+    timeDifference = targetDate.getTime() - new Date().getTime();
+
+    // Update the days, hours, minutes, and seconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)) + 2;
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    // Update the countdown display
+    var pill = `<span class="badge text-bg-secondary"><h3>${days} Days Until Embrace AI Conference<h3></span>`;
+    $("#timer").empty();
+    $("#timer").append(pill);
+  }, 1000);
+}

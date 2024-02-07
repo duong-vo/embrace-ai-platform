@@ -9,43 +9,48 @@
     <link rel="icon" type="image/x-icon" href="imgs/logoMicro.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 </head>
 <body class="gradGray">
     <nav class="navbar navbar-expand-lg" id="navHeader">
         <div class="navbar-header">
-          <a href="#">
-            <img class="navLogo" alt="logo" src="imgs\logoMini.png">
-          </a>
+            <a href="#">
+              <img class="navLogo" alt="logo" src="imgs\logoMini.png">
+            </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto" style="margin-left: auto; margin-right: auto;">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        <!---->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="activeTab" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cohort.html">Meet Cohort XI</a>
+                <a class="nav-link" href="cohort.html">Meet Cohort XI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="conference.html">Conference</a>
+                <a class="nav-link" href="conference.html">Conference</a>
             </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  More
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Student Videos (COMING SOON)</a>
-                    <a class="dropdown-item" href="#">Professional Videos (COMING SOON)</a>
-                    <a class="dropdown-item" href="#">Resources (COMING SOON)</a>
-                </div>
-              </li>
-          </ul>
-        </div>
+            <li class="nav-item">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="#">Student Videos (COMING SOON)</a>
+                              <a class="dropdown-item" href="#">Professional Videos (COMING SOON)</a>
+                              <a class="dropdown-item" href="#">Resources (COMING SOON)</a>
+                          </div>
+                        </li>
+                    </ul>
+                  </div>
+            </li>
+        </ul>
+        <!---->
+        
       </nav>
 
 <img src="imgs/logoBanner.png" class="card-img-top banner" alt="Embrace AI Banner" id="bigLogo"></img>
@@ -76,6 +81,7 @@
                         </div>
                     </div>
                 </div>
+                <br>
             </div>
             <div class="col-lg-6">
                 <p class="para">
@@ -187,7 +193,7 @@
                 </a>
                 <a class="icon-link icon-link-hover linkHover" href="cohort.html">
                     Cohort 11
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right linkHover" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
                         <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
                     </svg>
