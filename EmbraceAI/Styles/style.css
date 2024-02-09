@@ -242,8 +242,7 @@ h6 {
 .rightScroll {
   overflow-y: scroll;
   position: relative;
-  max-height: fit-content;
-  overflow: hidden
+  max-height: 600px;
 }
 .leftScroll {
   position: fixed;
@@ -253,4 +252,7 @@ h6 {
 }
 .sideNav {
   background-image: linear-gradient(rgb(96, 96, 96), rgb(145, 145, 145));
+}
+.overTest {
+  overflow: auto;
 }
