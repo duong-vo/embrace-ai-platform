@@ -87,4 +87,4 @@ function laikinParse(str) {
     renderResources(...element.split("[:)]"));
   });
 }
-fetchCSV()
+fetchCSV();
