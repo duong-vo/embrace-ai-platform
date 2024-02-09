@@ -245,14 +245,20 @@ h6 {
   max-height: 600px;
 }
 .leftScroll {
-  position: fixed;
-}
-.nav-link .active {
-  color: rgb(213, 43, 30);
+  overflow-y: scroll;
+  position: relative;
+  max-height: 600px;
 }
 .sideNav {
   background-image: linear-gradient(rgb(96, 96, 96), rgb(145, 145, 145));
 }
 .overTest {
   overflow: auto;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+	color: var(--bs-nav-pills-link-active-color);
+	background-color: rgb(213, 43, 30);
+}
+.nav-link {
+  color: rgb(213, 43, 30);
 }
