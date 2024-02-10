@@ -262,3 +262,4 @@ h6 {
 .nav-link {
   color: rgb(213, 43, 30);
 }
+.nav-link:hover {color: rgb(34, 34, 34);}

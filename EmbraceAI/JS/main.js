@@ -1,5 +1,8 @@
 // JS for all pages
 
+// Globals
+
+
 // DOCUMENT READY
 $(document).ready(function() {
   hoverEffects();
@@ -56,8 +59,10 @@ function fetchCSV() {
     method: 'GET',
     type: 'text',
   }).then(function (data) {
-    console.log(data);
     laikinParse(data);
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this).scrollspy('refresh');
+    });
   }).catch(function (data) {
     console.log('failed', data);
   });
@@ -81,10 +86,18 @@ function renderResources(itemNum, title, source, description, link) {
   );
 }
 function laikinParse(str) {
-  let rtn = {};
   str = str.split("\n").slice(1);
   str.forEach((element) => {
     renderResources(...element.split("[:)]"));
+  });
+}
+function renderLink(link) {
+  $.ajax({
+    url: link,
+    method: 'GET',
+    type: 'hmtl',
+  }).then(function (data) {
+      return data;
   });
 }
 fetchCSV();
