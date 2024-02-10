@@ -239,3 +239,76 @@ h6 {
 .h6space {
   display: inline;
 }
+.introText {
+  font-size: 17px;
+  text-align: center;
+}
+.videoCont {
+  border-radius: 15px !important;
+  background-image: linear-gradient(rgb(188, 188, 188), rgb(230, 230, 230), rgb(188, 188, 188));
+  max-width:65%;
+  padding: 5px 3% 5px 3%;
+}
+.embedVideo {
+  width: 80%;
+  aspect-ratio: 2/1.3;
+}
+.videoTranscript {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(rgb(188, 188, 188), rgb(230, 230, 230), rgb(188, 188, 188));
+}
+.videoHS {
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+.videoDescrip {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.hrCustom {
+  border-color: rgb(213, 43, 30) !important;
+  opacity: 100%;
+  border-style: solid;
+  text-align: center;
+  border-width: 2px;
+  border-radius: 2px;
+  max-width: 50%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.toTop {
+  background-image: linear-gradient(rgb(188, 188, 188), rgb(230, 230, 230), rgb(188, 188, 188));
+  border-style: solid;
+  border-radius: 5px;
+  border-color: rgb(164, 164, 164);
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(91, 91, 91);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 10px;
+}
+.videoLink {
+  margin-bottom: 5px;
+  color: rgb(53, 53, 53);
+}
+.transAcc {
+  text-align: left;
+}
+.proVideoHS {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+.profProfile {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(rgb(188, 188, 188), rgb(230, 230, 230), rgb(188, 188, 188));
+}
