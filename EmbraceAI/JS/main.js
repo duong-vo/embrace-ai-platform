@@ -91,13 +91,4 @@ function laikinParse(str) {
     renderResources(...element.split("[:)]"));
   });
 }
-function renderLink(link) {
-  $.ajax({
-    url: link,
-    method: 'GET',
-    type: 'hmtl',
-  }).then(function (data) {
-      return data;
-  });
-}
 fetchCSV();
