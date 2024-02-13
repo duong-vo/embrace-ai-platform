@@ -38,8 +38,9 @@
   max-height: 70%;
 }
 .navLogo {
- height: 15%;
- width: 15%;
+ height: 120px;
+ width: 120px;
+ position: relative;
 }
 .cohortImg {
   display: block;
@@ -79,11 +80,8 @@
   /*background-color: rgb(145, 145, 145) !important;*/
   font-weight: bold;
   color: white;
-  padding-left: 10px;
-  padding-right: 30px;
   border-radius: 0px;
 }
-
 #navHeader a {
   color: white;
   font-weight: bold;
