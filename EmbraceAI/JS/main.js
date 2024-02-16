@@ -2,6 +2,7 @@
 
 // DOCUMENT READY
 $(document).ready(function() {
+  initCopyright();
   hoverEffects();
   hoverShadow();
   initCountdown();
@@ -49,3 +50,8 @@ function initCountdown() {
     $("#timer").append(pill);
   }, 1000);
 }
+
+function initCopyright() {
+  const currentYear = new Date().getFullYear();
+  $("#copyright").html(`© ${currentYear} Lilly Leadership Institute, All rights reserved.`);
+};
