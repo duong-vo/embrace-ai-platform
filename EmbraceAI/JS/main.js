@@ -36,7 +36,7 @@ function initCountdown() {
   const currentDate = new Date();
   var timeDifference = targetDate.getTime() - currentDate.getTime();
   // Update the countdown every second
-  setInterval(() => {
+  /*setInterval(() => {
     // Recalculate the time difference
     timeDifference = targetDate.getTime() - new Date().getTime();
 
@@ -50,16 +50,16 @@ function initCountdown() {
     var pill = `<span class="badge text-bg-secondary"><h3>${days} Days Until Embrace AI Conference<h3></span>`;
     $("#timer").empty();
     $("#timer").append(pill);
-  }, 1000);
+  }, 1000);*/
 }
 
 function fetchCSV() {
   $.ajax({
-    url: 'https://embraceai.co/assets/resources.drew',
+    url: 'https://embraceai.co/assets/poorMansDatabase3.tsv',
     method: 'GET',
     type: 'text',
   }).then(function (data) {
-    laikinParse(data);
+    txvParse(data);
     $('[data-spy="scroll"]').each(function () {
       var $spy = $(this).scrollspy('refresh');
     });
@@ -68,7 +68,7 @@ function fetchCSV() {
   });
 }
 
-function renderResources(itemNum, title, source, description, link) {
+function renderResources(type, itemNum, title, source, link, description,) {
   if (itemNum === undefined || itemNum === "") return;
   $(".resourcesHere").append(
     `
@@ -85,10 +85,18 @@ function renderResources(itemNum, title, source, description, link) {
     `
   );
 }
-function laikinParse(str) {
-  str = str.split("\n").slice(1);
-  str.forEach((element) => {
-    renderResources(...element.split("[:)]"));
+function txvParse(str) {
+  const lines = str.split("\n");
+  const headers = lines[0].split("\t");
+  const data = lines.slice(1).map((line) => {
+    const values = line.split("\t");
+    const obj = {};
+    for (let i = 0; i < headers.length; i++) {
+      obj[headers[i]] = values[i];
+    }
+    console.log(obj);
+    return obj;
   });
+  return data;
 }
 fetchCSV();
