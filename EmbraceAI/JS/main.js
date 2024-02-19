@@ -59,7 +59,7 @@ function fetchCSV() {
     method: 'GET',
     type: 'text',
   }).then(function (data) {
-    txvParse(data);
+    tsvParse(data);
     $('[data-spy="scroll"]').each(function () {
       var $spy = $(this).scrollspy('refresh');
     });
@@ -68,8 +68,12 @@ function fetchCSV() {
   });
 }
 
-function renderResources(type, itemNum, title, source, link, description,) {
+function renderResources(type, itemNum, title, source, link, embed, imgLink, tag, description,) {
   if (itemNum === undefined || itemNum === "") return;
+  if ($(".type").length) {
+    
+  }
+  $("#putHere").append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
   $(".resourcesHere").append(
     `
       <br>
@@ -85,18 +89,10 @@ function renderResources(type, itemNum, title, source, link, description,) {
     `
   );
 }
-function txvParse(str) {
-  const lines = str.split("\n");
-  const headers = lines[0].split("\t");
-  const data = lines.slice(1).map((line) => {
-    const values = line.split("\t");
-    const obj = {};
-    for (let i = 0; i < headers.length; i++) {
-      obj[headers[i]] = values[i];
-    }
-    console.log(obj);
-    return obj;
+function tsvParse(str) {
+  str = str.split("\n").slice(1);
+  str.forEach((element) => {
+    renderResources(...element.split("\t"));
   });
-  return data;
 }
 fetchCSV();
