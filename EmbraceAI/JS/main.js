@@ -60,9 +60,6 @@ function fetchCSV() {
     type: 'text',
   }).then(function (data) {
     tsvParse(data);
-    $('[data-spy="scroll"]').each(function () {
-      var $spy = $(this).scrollspy('refresh');
-    });
   }).catch(function (data) {
     console.log('failed', data);
   });
@@ -70,8 +67,10 @@ function fetchCSV() {
 
 function renderResources(type, itemNum, title, source, link, embed, imgLink, tag, description,) {
   if (itemNum === undefined || itemNum === "") return;
-  if ($(".type").length) {
-    
+  if (!$("."+type).length) {
+    const inum = "item-" + itemNum.split("-")[1];
+    $("#putHere").append(`<a class="nav-link ${type}" href="#${inum}">${type}s</a>`);
+    $(".resourcesHere").append(`<br id="${inum}">`);
   }
   $("#putHere").append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
   $(".resourcesHere").append(
@@ -93,6 +92,9 @@ function tsvParse(str) {
   str = str.split("\n").slice(1);
   str.forEach((element) => {
     renderResources(...element.split("\t"));
+  });
+  $('[data-spy="scroll"]').each(function () {
+    $(this).scrollspy('refresh');
   });
 }
 fetchCSV();
