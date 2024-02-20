@@ -73,10 +73,11 @@ function renderResources(type, itemNum, title, source, link, embed, imgLink, tag
     $(".resourcesHere").append(`<br id="${inum}">`);
   }
   $("#putHere").append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
-  $(".resourcesHere").append(
+  const defaultCard =
     `
       <br>
-      <div class="card rcard" id="${itemNum}">
+      <div class="card rcard h-100 ${tag.replace(" ", "")}" id="${itemNum}">
+        ${imgLink == "no"? ``: `<img src="${imgLink}" class="card-img-top" alt=""></img>`}
         <div class="card-body">
           <h5 class="card-title">${title}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">${source}</h6>
@@ -85,8 +86,25 @@ function renderResources(type, itemNum, title, source, link, embed, imgLink, tag
         </div>
       </div>
       <br>
+    `;
+    const videoCard =
     `
-  );
+      <br>
+      <div class="card rcard h-100 ${tag.replace(" ", "")}" id="${itemNum}">
+        ${embed == "no"? ``: embed}
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">${source}</h6>
+          <p class="card-text">${description}</p>
+          <a href="${link}" class="card-link">Go to Resource</a>
+        </div>
+      </div>
+      <br>
+    `;
+  if (type == "article") $(".resourcesHere").append(defaultCard);
+  else if (type == "report") $(".resourcesHere").append(defaultCard);
+  else if (type == "video") $(".resourcesHere").append(videoCard);
+  
 }
 function tsvParse(str) {
   str = str.split("\n").slice(1);
