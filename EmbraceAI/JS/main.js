@@ -55,7 +55,7 @@ function initCountdown() {
 
 function fetchCSV() {
   $.ajax({
-    url: 'https://embraceai.co/assets/poorMansDatabase3.tsv',
+    url: 'https://embraceai.co/assets/poorMansDatabase5.tsv',
     method: 'GET',
     type: 'text',
   }).then(function (data) {
@@ -69,10 +69,18 @@ function renderResources(type, itemNum, title, source, link, embed, imgLink, tag
   if (itemNum === undefined || itemNum === "") return;
   if (!$("."+type).length) {
     const inum = "item-" + itemNum.split("-")[1];
-    $("#putHere").append(`<a class="nav-link ${type}" href="#${inum}">${type}s</a>`);
+    $("#putHere").append(`<a class="nav-link ${type}" href="#${inum}">${type.charAt(0).toUpperCase() + type.slice(1)}s</a>`);
     $(".resourcesHere").append(`<br id="${inum}">`);
   }
   $("#putHere").append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
+  console.log("#"+tag.replace(" ", "")+"switch", $("#"+tag.replace(" ", "")+"switch").length);
+  if ($("#"+tag.replace(" ", "")+"switch").length) $("#drResources").append(
+    `<li>
+      <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="${tag.replace(" ", "")}switch">
+          <label class="form-check-label" for="${tag.replace(" ", "")}switch">${tag}</label>
+      </div>   
+  </li>`);
   const defaultCard =
     `
       <br>
@@ -91,23 +99,24 @@ function renderResources(type, itemNum, title, source, link, embed, imgLink, tag
     `
       <br>
       <div class="card rcard h-100 ${tag.replace(" ", "")}" id="${itemNum}">
-        ${embed == "no"? ``: embed}
         <div class="card-body">
           <h5 class="card-title">${title}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">${source}</h6>
+        </div>
+          ${embed == "no"? ``: embed}
+        <div class="card-body">
           <p class="card-text">${description}</p>
           <a href="${link}" class="card-link">Go to Resource</a>
         </div>
       </div>
       <br>
     `;
-  if (type == "article") $(".resourcesHere").append(defaultCard);
-  else if (type == "report") $(".resourcesHere").append(defaultCard);
+  if (["article", "report", "book", "course"].includes(type)) $(".resourcesHere").append(defaultCard);
   else if (type == "video") $(".resourcesHere").append(videoCard);
   
 }
 function tsvParse(str) {
-  str = str.split("\n").slice(1);
+  str = str.split("\n");
   str.forEach((element) => {
     renderResources(...element.split("\t"));
   });
