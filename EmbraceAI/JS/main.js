@@ -1,7 +1,7 @@
 // JS for all pages
 
 // Globals
-
+var globalData = "";
 
 // DOCUMENT READY
 $(document).ready(function() {
@@ -59,6 +59,7 @@ function fetchCSV() {
     method: 'GET',
     type: 'text',
   }).then(function (data) {
+    globalData = data;
     tsvParse(data);
   }).catch(function (data) {
     console.log('failed', data);
@@ -67,20 +68,18 @@ function fetchCSV() {
 
 function renderResources(type, itemNum, title, source, link, embed, imgLink, tag, description,) {
   if (itemNum === undefined || itemNum === "") return;
+
+  let tags = tag.toLowerCase().replace(/\s/g, "").split(",");
+  tags.forEach((element) => {
+    console.log(element, $("#"+element), $("#"+element).checked);
+    if (!($("#"+element).checked)) return;
+  });
   if (!$("."+type).length) {
     const inum = "item-" + itemNum.split("-")[1];
     $("#putHere").append(`<a class="nav-link ${type}" href="#${inum}">${type.charAt(0).toUpperCase() + type.slice(1)}s</a>`);
     $(".resourcesHere").append(`<br id="${inum}">`);
   }
   $("#putHere").append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
-  console.log("#"+tag.replace(" ", "")+"switch", $("#"+tag.replace(" ", "")+"switch").length);
-  if ($("#"+tag.replace(" ", "")+"switch").length) $("#drResources").append(
-    `<li>
-      <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="${tag.replace(" ", "")}switch">
-          <label class="form-check-label" for="${tag.replace(" ", "")}switch">${tag}</label>
-      </div>   
-  </li>`);
   const defaultCard =
     `
       <br>
@@ -124,4 +123,10 @@ function tsvParse(str) {
     $(this).scrollspy('refresh');
   });
 }
+function checkUpdate() {
+  $("#putHere").empty();
+  $("#resourcesHere").empty();
+  tsvParse(globalData);
+}
+
 fetchCSV();
