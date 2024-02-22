@@ -68,12 +68,14 @@ function fetchCSV() {
 
 function renderResources(type, itemNum, title, source, link, embed, imgLink, tag, description,) {
   if (itemNum === undefined || itemNum === "") return;
+    let logic = title.includes($("#searchBar").val()) || description.includes($("#searchBar").val())
+      || tag.includes($("#searchBar").val()) || type.includes($("#searchBar").val());
+      console.log(logic);
+    if (!logic) return;
 
-  let tags = tag.toLowerCase().replace(/\s/g, "").split(",");
-  tags.forEach((element) => {
-    console.log(element, $("#"+element), $("#"+element).checked);
-    if (!($("#"+element).checked)) return;
-  });
+  
+
+
   if (!$("."+type).length) {
     const inum = "item-" + itemNum.split("-")[1];
     $("#putHere").append(`<a class="nav-link ${type}" href="#${inum}">${type.charAt(0).toUpperCase() + type.slice(1)}s</a>`);
@@ -123,10 +125,9 @@ function tsvParse(str) {
     $(this).scrollspy('refresh');
   });
 }
-function checkUpdate() {
+function search() {
   $("#putHere").empty();
-  $("#resourcesHere").empty();
+  $(".resourcesHere").empty();
   tsvParse(globalData);
 }
-
 fetchCSV();
