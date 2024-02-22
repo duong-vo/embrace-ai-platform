@@ -68,10 +68,9 @@ function fetchCSV() {
 
 function renderResources(type, itemNum, title, source, link, embed, imgLink, tag, description,) {
   if (itemNum === undefined || itemNum === "") return;
-    let logic = title.toLowerCase().includes($("#searchBar").val().toLowerCase()) || description.toLowerCase().includes($("#searchBar").val().toLowerCase())
-      || tag.toLowerCase().includes($("#searchBar").val().toLowerCase()) || type.toLowerCase().includes($("#searchBar").val().toLowerCase());
-      console.log(logic);
-    if (!logic) return;
+  let logic = title.toLowerCase().includes($("#searchBar").val().toLowerCase()) || description.toLowerCase().includes($("#searchBar").val().toLowerCase())
+    || tag.toLowerCase().includes($("#searchBar").val().toLowerCase()) || type.toLowerCase().includes($("#searchBar").val().toLowerCase());
+  if (!logic) return;
 
   
 
