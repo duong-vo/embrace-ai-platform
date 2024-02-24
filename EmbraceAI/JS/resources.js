@@ -46,7 +46,7 @@ function doIDisplay(obj) {
     if (obj.itemNum === undefined) return false;
     let logic = false;
     for (let element in obj) logic = logic || obj[element].toLowerCase().includes($("#searchBar").val().toLowerCase());
-    return logic;
+    return logic || advancedRec(obj);
 }
 
 function pushCard(obj) {
@@ -89,4 +89,11 @@ function pushCard(obj) {
     `;
     if (["article", "report", "Book", "course"].includes(type)) $(".resourcesHere").append(defaultCard);
     else if (type == "video") $(".resourcesHere").append(videoCard);
+}
+
+function advancedRec(obj) {
+    let points = 0;
+    let search = $("#searchBar").val().toLowerCase().split(" ");
+    for (let element in obj) for (let each in search) points += obj[element].toLowerCase().includes(each) ? each.length : 0;
+    return points/$("#searchBar").val().length > 0.7;
 }
