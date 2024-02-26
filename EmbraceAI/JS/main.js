@@ -2,6 +2,7 @@
 
 // DOCUMENT READY
 $(document).ready(function() {
+  initCopyright();
   hoverEffects();
   hoverShadow();
 });
@@ -27,3 +28,7 @@ function hoverEffects() {
     $(this).removeClass('linkOn');
   });
 }
+function initCopyright() {
+  const currentYear = new Date().getFullYear();
+  $("#copyright").html(`© ${currentYear} Lilly Leadership Institute, All rights reserved.`);
+};
