@@ -97,3 +97,7 @@ function advancedRec(obj) {
     for (let element in obj) for (let each in search) points += obj[element].toLowerCase().includes(each) ? each.length : 0;
     return points/$("#searchBar").val().length > 0.7;
 }
+
+function collapseNav() {
+    
+}
