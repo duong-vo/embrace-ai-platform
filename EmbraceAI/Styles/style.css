@@ -310,3 +310,27 @@ h6 {
   margin-right: auto;
   background-image: linear-gradient(rgb(188, 188, 188), rgb(230, 230, 230), rgb(188, 188, 188));
 }
+.confBioIm {
+  border-radius: 50%; /* Sets the border radius to 50% for a circle */
+  width: 350px; /* Sets the width of the image element to 100px */
+  height: 350px; /* Sets the height of the image element to 100px */
+  object-fit: cover; /* Scales the image to fit the container while maintaining aspect ratio */
+  display: block; /* Makes the image a block-level element */
+  margin: 0 auto; /* Sets margins to 0 and centers the image horizontally */
+  /*position: relative;*/
+}
+.confBioHead{
+  text-align: center;
+  /* position: absolute;  Makes the element positioned relative to its parent */
+  top: 100px;/* Positions the bottom of the element 10px from the bottom of the container */
+}
+.justCenter {
+  text-align: center;
+}
+
+.bioPara {
+  text-align: left;
+}
+.confrow {
+  padding-bottom: 5%;
+}
