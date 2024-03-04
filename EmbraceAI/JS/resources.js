@@ -53,10 +53,11 @@ function pushCard(obj) {
     const { type, itemNum, title, source, link, embed, imgLink, tag, description } = obj;
     if (!$("."+type).length) {
         const inum = "item-" + itemNum.split("-")[1];
-        $("#putHere").append(`<a class="nav-link ${type}" href="#${inum}">${type.charAt(0).toUpperCase() + type.slice(1)}s</a>`);
+        $("#putHere").append(`<a class="sidenavlink btn-primary nav-link ${type}" data-bs-toggle="collapse" role="button" aria-expanded="false" href="#${type}">${type.charAt(0).toUpperCase() + type.slice(1)}s</a>`);
+        $("#putHere").append($("#putHere").length > 1 ? `</div><div id="${type} class="collapse">` : `<div id="${type}" class="collapse">`);
         $(".resourcesHere").append(`<br id="${inum}">`);
     }
-    $("#putHere").append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
+    $(`#${type}`).append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
     const defaultCard =
     `
         <br>
