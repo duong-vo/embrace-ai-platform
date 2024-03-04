@@ -12,8 +12,8 @@
 </head>
 <body class="gradGray">
     <body class="gradGray">
-        <nav class="container-fluid" id="navHeader">
-          <div class="row">
+        <nav class="navbar navbar-expand-lg" id="navHeader">
+          <div class="row navbar-collapse collapse show">
             <div class="col-lg-2">
               <a href="index.html">
                 <img class="navLogo" alt="logo" src="imgs/logoMini.png">
@@ -21,29 +21,35 @@
             </div>
             <div class="col-lg-9 tabsSec">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
               </button>
               <!---->
               <ul class="nav nav-tabs">
-                <li class="nav-item">
+                <div class="navbar-nav">
+                  <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="cohort.html">Meet Cohort XI</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" id="activeTab" href="conference.html">Conference</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="studentVids.html">Student Interviews</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="professionalVids.html">Professional Interviews</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Resources - COMING SOON</a>
-                </li>
-            </ul>
+                  </li>
+                  <li class="nav-item ">
+                    <div class="navbar-nav">
+                      <a class="nav-link" href="cohort.html">Meet Cohort XI</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active"  id="activeTab" href="conference.html">Conference</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="studentVids.html">Student Interviews</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="professionalVids.html">Professional Interviews</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Resources - COMING SOON</a>
+                  </li>
+
+                </div>
+              </ul>
+              <!---->
             </div>
             <div class="col-lg-1"></div>
           </div>
@@ -51,15 +57,16 @@
 
 
 
-<h1 style="font-size: 60px; text-align: center;">Conference Information</h1>
-<br>
-<div class="container-fluid py-5" id="mainCont">
-    <div class="row confrow">
-        <div class="col-lg-6" style="font-size: 17px;">
-            <h2 class="fw-bold">Join Us in Oxford on April 12th!</h2>
-            <p class="fs-5">Cohort 11 of the Lilly Leadership Institute is hosting a conference on embracing generative AI on April 12th, 2024, from 1pm to 5pm. This conference will feature industry professionals sharing their perspectives on how knowledge workers and organizations can utilize the power of generative AI tools to expand their capabilities.</p>
-            <p class="fs-5">Be sure to stay tuned to our LinkedIn and social media pages for more information on the conference as we inch closer to the date! For now, be sure to mark your calendars! We look forward to seeing you all there!</p>
-            <div id="timer"></div>
+
+        <h1 style="font-size: 60px; text-align: center;">Conference Information</h1>
+        <br>
+        <div class="container-fluid py-5" id="mainCont">
+          <div class="row confrow">
+            <div class="col-lg-6" style="font-size: 17px;">
+              <h2 class="fw-bold">Join Us in Oxford on April 12th!</h2>
+              <p class="fs-5">Cohort 11 of the Lilly Leadership Institute is hosting a conference on embracing generative AI on April 12th, 2024, from 1pm to 5pm. This conference will feature industry professionals sharing their perspectives on how knowledge workers and organizations can utilize the power of generative AI tools to expand their capabilities.</p>
+              <p class="fs-5">Be sure to stay tuned to our LinkedIn and social media pages for more information on the conference as we inch closer to the date! For now, be sure to mark your calendars! We look forward to seeing you all there!</p>
+              <div id="timer"></div>
         </div>
         <div class="col-lg-6">
                 <img src="imgs/Haddad.png" class="d-block w-100 croppedNoSize" alt="Charlie Haddad">
