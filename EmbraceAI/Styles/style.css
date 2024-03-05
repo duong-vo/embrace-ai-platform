@@ -339,3 +339,40 @@ h6 {
 .btn {
   margin-bottom: 20px;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.videoLinkButton {
+  margin-bottom: 5px;
+  color: rgb(94, 94, 94);
+  border-radius: 5px;
+  max-width: 100%;
+  border-color: rgb(125, 125, 125);
+  border-style: solid;
+  border-width: 2px;
+  background-color: linear-gradient(#6a6a6a45, #f8f9f965);
+  padding: 5px;
+}
+.tableContHS {
+  width: 80px;
+  margin-left: 0%;
+  margin-right: 100%;
+  border-radius: 50%
+}
+.fuck {
+  width: 20%;
+}
