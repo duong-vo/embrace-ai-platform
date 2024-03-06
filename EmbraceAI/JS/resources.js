@@ -7,7 +7,7 @@ fetchTSV()
 
 function fetchTSV() {
     $.ajax({
-      url: 'https://embraceai.co/assets/poorMansDatabase5.tsv',
+      url: 'https://embraceai.co/assets/poorMansDatabase7.tsv',
       method: 'GET',
       type: 'text',
     }).then(function (data) {
@@ -53,7 +53,7 @@ function pushCard(obj) {
     const { type, itemNum, title, source, link, embed, imgLink, tag, description } = obj;
     if (!$("."+type).length) {
         const inum = "item-" + itemNum.split("-")[1];
-        $("#putHere").append(`<a class="sidenavlink btn-primary nav-link ${type}" data-bs-toggle="collapse" role="button" aria-expanded="false" href="#${type}">${type.charAt(0).toUpperCase() + type.slice(1)}s</a>`);
+        $("#putHere").append(`<a class="sidenavlink btn-primary nav-link ${type}" data-bs-toggle="collapse" role="button" aria-expanded="false" href="#${type}">${type === "opensource" ? "Open Source": type.charAt(0).toUpperCase() + type.slice(1) + "s"}</a>`);
         $("#putHere").append($("#putHere").length > 1 ? `</div><div id="${type} class="collapse">` : `<div id="${type}" class="collapse">`);
         $(".resourcesHere").append(`<br id="${inum}">`);
     }
@@ -88,7 +88,7 @@ function pushCard(obj) {
         </div>
         <br>
     `;
-    if (["article", "report", "Book", "course"].includes(type)) $(".resourcesHere").append(defaultCard);
+    if (["article", "report", "Book", "course", "opensource"].includes(type)) $(".resourcesHere").append(defaultCard);
     else if (type == "video") $(".resourcesHere").append(videoCard);
 }
 
@@ -96,9 +96,5 @@ function advancedRec(obj) {
     let points = 0;
     let search = $("#searchBar").val().toLowerCase().split(" ");
     for (let element in obj) for (let each in search) points += obj[element].toLowerCase().includes(each) ? each.length : 0;
-    return points/$("#searchBar").val().length > 0.7;
-}
-
-function collapseNav() {
-    
+    return points/$("#searchBar").val().length > 0.6;
 }
