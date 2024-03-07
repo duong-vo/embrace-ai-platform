@@ -259,8 +259,8 @@ h6 {
   overflow: auto;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: var(--bs-nav-pills-link-active-color);
-	background-color: rgb(136, 136, 136);
+	color: rgb(213, 43, 30);
+	background-color: transparent;
 }
 .nav-link {
   color: rgb(213, 43, 30);
