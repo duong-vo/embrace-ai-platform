@@ -55,7 +55,7 @@ function pushCard(obj) {
         const inum = "item-" + itemNum.split("-")[1];
         $("#putHere").append(`
         <a class="sidenavlink btn-primary nav-link ${type}" data-bs-toggle="collapse" role="button" 
-        aria-expanded="false" href="#${type}" onclick="expCheck("${inum}")"id="colLink${inum}">
+        aria-expanded="false" href="#${type}" onclick="expCheck()"id="colLink${inum}">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16" id="svg${inum}">
         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
         </svg>
@@ -125,12 +125,15 @@ function advancedRec(obj) {
     return points/$("#searchBar").val().length > 0.6;
 }
 
-function expCheck(inum) {
-    const newPath = $("#colLink"+inum).attr('aria-expanded') === 'true' ?
-        `<path fill-rule="evenodd" d="M3.646 11.854a.5.5 0 0 0 .708 0L8 8.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708M2.4 5.2c0 .22.18.4.4.4h10.4a.4.4 0 0 0 0-.8H2.8a.4.4 0 0 0-.4.4"/>`
-        : `<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>`;
-    $("#svg" + inum).empty();
-    $("#svg" + inum).append(newPath);
-    
+function expCheck() {
+    const elements = $("[aria-expanded='true']");
+    const elements2 = $("[aria-expanded='false']");
+    const newSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M3.646 11.854a.5.5 0 0 0 .708 0L8 8.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708M2.4 5.2c0 .22.18.4.4.4h10.4a.4.4 0 0 0 0-.8H2.8a.4.4 0 0 0-.4.4"/>
+  </svg>`;
+    const oldSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+  </svg>`;
+    elements.find('svg').replaceWith(newSVG);
+    elements2.find('svg').replaceWith(oldSVG);
 }
-  
