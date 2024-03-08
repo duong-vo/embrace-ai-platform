@@ -69,8 +69,8 @@ function pushCard(obj) {
     const defaultCard =
     `
         <br>
-        <div class="card rcard h-100 ${tag.replace(" ", "")}" id="${itemNum}">
-        ${imgLink == "no"? ``: `<img src="${imgLink}" class="${type==="Book" ? "img-fluid rounded-start" : "card-img-top"}" alt="Cover image"></img>`}
+        <div class="card rcard h-100 ${tag.replace(" ", "")}" id="${itemNum}">  
+        ${imgLink == "no"? ``: `<img src="${imgLink}" class="${type} card-img-top" alt="Cover image"></img>`}
         <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <h6 class="card-subtitle mb-2 text-body-secondary">${source}</h6>

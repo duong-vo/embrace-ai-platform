@@ -413,3 +413,6 @@ td, th {
 .rcard {
   height: 1.5vh;
 }
+.rcard > .card-img-top {
+  height: 50vh;
+}
