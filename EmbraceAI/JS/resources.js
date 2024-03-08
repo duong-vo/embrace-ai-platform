@@ -11,8 +11,9 @@ function fetchTSV() {
       method: 'GET',
       type: 'text',
     }).then(function (data) {
-      data = data.split("\n");
-      renderResources(parseObj(data));
+        data = data.split("\n");
+        renderResources(parseObj(data));
+        fixAnchors();
     }).catch(function (data) {
       console.log('failed', data);
     });
@@ -36,6 +37,7 @@ function search() {
     $("#putHere").empty();
     $(".resourcesHere").empty();
     renderResources(globalMap);
+    fixAnchors();
 }
 
 function renderResources(obj) {
@@ -138,7 +140,7 @@ function expCheck() {
     elements2.find('svg').replaceWith(oldSVG);
 }
 
-$(document).ready(() => {
+const fixAnchors = () => {
     console.log('ready');
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -153,4 +155,4 @@ $(document).ready(() => {
             window.location.hash = hashValue;
         });
     })
-});
+};
