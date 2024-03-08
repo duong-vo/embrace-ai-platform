@@ -122,7 +122,7 @@ function advancedRec(obj) {
     let points = 0;
     let search = $("#searchBar").val().toLowerCase().split(" ");
     for (let element in obj) for (let each in search) points += obj[element].toLowerCase().includes(each) ? each.length : 0;
-    return search.length > 3? points/$("#searchBar").val().length > 0.6 : false;
+    return points/$("#searchBar").val().length > 0.6;
 }
 
 function expCheck() {
