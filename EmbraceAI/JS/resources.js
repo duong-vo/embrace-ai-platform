@@ -137,3 +137,20 @@ function expCheck() {
     elements.find('svg').replaceWith(newSVG);
     elements2.find('svg').replaceWith(oldSVG);
 }
+
+$(document).ready(() => {
+    console.log('ready');
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Prevent the default anchor behavior
+            console.log('anchor clicked');
+            e.preventDefault();
+
+            // Get the value of the href attribute
+            var hashValue = this.getAttribute('href');
+
+            // Manually set the window's hash to the value of the href attribute of the clicked link
+            window.location.hash = hashValue;
+        });
+    })
+});
