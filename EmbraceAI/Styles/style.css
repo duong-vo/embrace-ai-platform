@@ -347,7 +347,7 @@ h6 {
   margin-bottom: .25rem !important;
 }
 .confBioIm {
-  border-radius: 50%;
+  border-radius: 55%;
   width: 25vw; /* 25% of the viewport width */
   height: 25vw; /* 25% of the viewport width */
   max-width: 350px; /* Limit the maximum width to 350px */
