@@ -67,7 +67,7 @@ function pushCard(obj) {
         `</div><div id="${type} class="collapse">` : `<div id="${type}" class="collapse">`);
         $(".resourcesHere").append(`<br id="${inum}">`);
     }
-    $(`#${type}`).append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}">${title}</a>`);
+    $(`#${type}`).append(`<a class="nav-link ms-3 my-1 ${type}" href="#${itemNum}"><b>${source}:</b> ${title}</a>`);
     const defaultCard =
     `
         <br>
