@@ -7,7 +7,7 @@ fetchTSV()
 
 function fetchTSV() {
     $.ajax({
-      url: 'https://embraceai.co/assets/poorMansDatabase7.tsv',
+      url: 'https://embraceai.co/assets/poorMansDatabase8.tsv',
       method: 'GET',
       type: 'text',
     }).then(function (data) {
@@ -22,7 +22,6 @@ function fetchTSV() {
 function parseObj(str) {
     const propertyNames = ["type", "itemNum", "title", "source", "link", "embed", "imgLink", "tag", "description"];
     const result = {};
-    console.log(str);
     str.forEach((string) => {
       const elements = string.split("\t");
       const item = {};
