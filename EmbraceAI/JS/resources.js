@@ -22,7 +22,6 @@ function fetchTSV() {
 function parseObj(str) {
     const propertyNames = ["type", "itemNum", "title", "source", "link", "embed", "imgLink", "tag", "description"];
     const result = {};
-    console.log(str);
     str.forEach((string) => {
       const elements = string.split("\t");
       const item = {};
