@@ -7,7 +7,7 @@ fetchTSV()
 
 function fetchTSV() {
     $.ajax({
-      url: 'https://embraceai.co/assets/poorMansDatabase7.tsv',
+      url: 'https://embraceai.co/assets/poorMansDatabase8.tsv',
       method: 'GET',
       type: 'text',
     }).then(function (data) {
