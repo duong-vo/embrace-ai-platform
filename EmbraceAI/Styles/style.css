@@ -417,3 +417,11 @@ td, th {
 .rcard > .card-img-top {
   height: 50vh;
 }
+.agendaInner {
+  width: 65vw;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.agendaOuter {
+  align-items: center;
+}
